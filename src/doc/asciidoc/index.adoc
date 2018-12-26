@@ -1,11 +1,59 @@
 = Getting Started With Spring REST Docs
+Lucas
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
 
 This is an example output for a service running at http://localhost:8080:
 
-.request
-include::{snippets}/sample/http-request.adoc[]
+== Introduction
 
-.response
-include::{snippets}/sample/http-response.adoc[]
+어쩌고 저쩌고
 
-As you can see the format is very simple, and in fact you always get the same message
+== TestController
+
+=== getSuccess
+
+.요청
+include::{snippets}/TestControllerTest/getSuccess/http-request.adoc[]
+
+.응답
+include::{snippets}/TestControllerTest/getSuccess/response-body.adoc[]
+
+=== postSuccess
+
+.요청
+include::{snippets}/TestControllerTest/postSuccess/request-body.adoc[]
+
+.응답
+include::{snippets}/TestControllerTest/postSuccess/response-body.adoc[]
+
+.응답필드들
+include::{snippets}/TestControllerTest/postSuccess/response-fields.adoc[]
+
+=== postFail_validation
+
+.요청
+include::{snippets}/TestControllerTest/postFail_validation/http-request.adoc[]
+
+.요청 파라미터
+include::{snippets}/TestControllerTest/postFail_validation/request-fields.adoc[]
+
+.응답
+include::{snippets}/TestControllerTest/postFail_validation/http-response.adoc[]
+
+
+== Test2Controller
+
+=== getSuccess
+
+.요청
+include::{snippets}/Test2ControllerTest/getSuccess/request-body.adoc[]
+
+.응답
+include::{snippets}/Test2ControllerTest/getSuccess/response-body.adoc[]
+
+버젼 . 음

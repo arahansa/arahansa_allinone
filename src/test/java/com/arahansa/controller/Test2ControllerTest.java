@@ -17,15 +17,14 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(Test2Controller.class)
-@AutoConfigureRestDocs(outputDir = "generated-snippets")
+@AutoConfigureRestDocs(outputDir = "build/generated-snippets")
 public class Test2ControllerTest {
-
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnDefaultMessage() throws Exception {
+    public void getSuccess() throws Exception {
 
         FieldDescriptor[] desc = new FieldDescriptor[] {
                 fieldWithPath("status").description("Response Status"),
@@ -34,7 +33,7 @@ public class Test2ControllerTest {
 
         this.mockMvc.perform(get("/test2"))
                 .andExpect(status().isOk())
-                .andDo(document("test2", responseFields(desc)));
+                .andDo(document("{ClassName}/{methodName}", responseFields(desc)));
     }
 
 }

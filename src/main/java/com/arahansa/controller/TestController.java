@@ -17,15 +17,15 @@ import javax.validation.Valid;
 public class TestController {
 
     @GetMapping
-    public CommonRes helloworld(){
+    public CommonRes first(){
         return new CommonRes();
     }
 
     @PostMapping
-    public CommonRes insertTestEntity(@RequestBody @Valid TestEntity testEntity, BindingResult errors){
+    public CommonRes post(@RequestBody @Valid TestEntity testEntity, BindingResult errors){
         if(errors.hasErrors()){
             return new CommonRes(CommonRes.VALID, "밸리데이션 에러");
         }
-        return new CommonRes();
+        return new CommonRes(testEntity);
     }
 }
